@@ -624,3 +624,43 @@ window.addEventListener("load", () => {
   console.log(`🏆 Tu mejor puntuación: ${highScore} pts`);
   console.log(`🔥 Tu mejor racha: ${maxStreak}`);
 });
+
+// ... código anterior ...
+
+// CONTROLES TÁCTILES (MÓVIL)
+const btnLeft = document.getElementById("btnLeft");
+const btnRight = document.getElementById("btnRight");
+
+// Función para manejar el input (táctil o mouse)
+const handleInput = (direction, isPressed) => {
+  if (direction === "left") keys.left = isPressed;
+  if (direction === "right") keys.right = isPressed;
+};
+
+// Eventos para Botón Izquierdo
+btnLeft.addEventListener("touchstart", (e) => {
+  e.preventDefault(); // Evita scroll/zoom
+  handleInput("left", true);
+});
+btnLeft.addEventListener("touchend", (e) => {
+  e.preventDefault();
+  handleInput("left", false);
+});
+btnLeft.addEventListener("mousedown", () => handleInput("left", true));
+btnLeft.addEventListener("mouseup", () => handleInput("left", false));
+btnLeft.addEventListener("mouseleave", () => handleInput("left", false));
+
+// Eventos para Botón Derecho
+btnRight.addEventListener("touchstart", (e) => {
+  e.preventDefault();
+  handleInput("right", true);
+});
+btnRight.addEventListener("touchend", (e) => {
+  e.preventDefault();
+  handleInput("right", false);
+});
+btnRight.addEventListener("mousedown", () => handleInput("right", true));
+btnRight.addEventListener("mouseup", () => handleInput("right", false));
+btnRight.addEventListener("mouseleave", () => handleInput("right", false));
+
+// ... window load listener ...
