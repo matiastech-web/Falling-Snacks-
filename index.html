@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>¡Feliz Cumpleaños Mi Amor! 🐱💕</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <div class="container" id="gameContainer">
+      <div class="header">
+        <h1>¡Ayuda al gatito a atrapar comida! 🐱</h1>
+        <p class="subtitle">Un juego exclusivo para ti 💛</p>
+      </div>
+
+      <div class="settings-bar">
+        <div class="settings-group">
+          <label>Dificultad:</label>
+          <select id="difficulty">
+            <option value="easy">Fácil 🌸</option>
+            <option value="normal" selected>Normal 💕</option>
+            <option value="hard">Difícil 😰</option>
+            <option value="crazy">Gatunidad! 🙀</option>
+          </select>
+        </div>
+        <div class="settings-group">
+          <label>Tema:</label>
+          <select id="theme">
+            <option value="pastel" selected>Rosa 🌸</option>
+            <option value="lavender">Lavanda 💜</option>
+            <option value="peach">Melocotón 🍑</option>
+            <option value="mint">Menta 🌿</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="game-info">
+        <div class="info-item">
+          <span class="info-label">Puntos:</span>
+          <span class="info-value" id="score">0</span>
+        </div>
+        <div class="info-item">
+          <span class="info-label">Vidas:</span>
+          <span class="info-value" id="lives">5</span>
+        </div>
+        <div class="info-item">
+          <span class="info-label">Nivel:</span>
+          <span class="info-value" id="level">1</span>
+        </div>
+        <button id="fullscreenBtn" class="btn-fullscreen">⛶</button>
+        <button id="colorBtn" class="btn-color">🎨</button>
+      </div>
+
+      <canvas id="gameCanvas" width="800" height="600"></canvas>
+
+      <div class="controls">
+        <p class="controls-text">Usa las flechas ← → para mover</p>
+        <button id="startBtn" class="btn-start">▶ Iniciar Juego</button>
+      </div>
+    </div>
+
+    <div id="gameOverModal" class="modal hidden">
+      <div class="modal-content">
+        <h2>¡Fin del Juego! 🎉</h2>
+        <div class="score-display">
+          <div id="finalScore"></div>
+        </div>
+        <div class="button-group">
+          <button id="restartBtn" class="btn-primary">
+            🎮 Jugar Nuevamente
+          </button>
+          <button id="shareBtn" class="btn-secondary">
+            📱 Compartir Resultado
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/game.js"></script>
+  </body>
+</html>
